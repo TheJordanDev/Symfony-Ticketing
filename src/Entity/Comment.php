@@ -26,7 +26,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>
  */
 #[ORM\Entity]
-#[ORM\Table(name: 'symfony_demo_comment')]
+#[ORM\Table(name: 'ticketing_comment')]
 class Comment
 {
     #[ORM\Id]
@@ -34,9 +34,9 @@ class Comment
     #[ORM\Column(type: 'integer')]
     private ?int $id = null;
 
-    #[ORM\ManyToOne(targetEntity: Post::class, inversedBy: 'comments')]
+    #[ORM\ManyToOne(targetEntity: Ticket::class, inversedBy: 'comments')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Post $post = null;
+    private ?Ticket $post = null;
 
     #[ORM\Column(type: 'text')]
     #[Assert\NotBlank(message: 'comment.blank')]
@@ -98,12 +98,12 @@ class Comment
         $this->author = $author;
     }
 
-    public function getPost(): ?Post
+    public function getPost(): ?Ticket
     {
         return $this->post;
     }
 
-    public function setPost(Post $post): void
+    public function setPost(Ticket $post): void
     {
         $this->post = $post;
     }

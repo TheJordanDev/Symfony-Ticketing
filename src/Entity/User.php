@@ -28,7 +28,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>
  */
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-#[ORM\Table(name: 'symfony_demo_user')]
+#[ORM\Table(name: 'ticketing_user')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -108,8 +108,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * Returns the roles or permissions granted to the user for security.
      */
-    public function getRoles(): array
-    {
+    public function getRoles(): array {
         $roles = $this->roles;
 
         // guarantees that a user always has at least one role for security

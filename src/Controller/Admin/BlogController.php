@@ -11,7 +11,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Post;
+use App\Entity\Ticket;
 use App\Form\PostType;
 use App\Repository\PostRepository;
 use App\Security\PostVoter;
@@ -68,7 +68,7 @@ class BlogController extends AbstractController
     #[Route('/new', methods: ['GET', 'POST'], name: 'admin_post_new')]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
-        $post = new Post();
+        $post = new Ticket();
         $post->setAuthor($this->getUser());
 
         // See https://symfony.com/doc/current/form/multiple_buttons.html
@@ -108,7 +108,7 @@ class BlogController extends AbstractController
      * Finds and displays a Post entity.
      */
     #[Route('/{id<\d+>}', methods: ['GET'], name: 'admin_post_show')]
-    public function show(Post $post): Response
+    public function show(Ticket $post): Response
     {
         // This security check can also be performed
         // using a PHP attribute: #[IsGranted('show', subject: 'post', message: 'Posts can only be shown to their authors.')]
@@ -124,7 +124,7 @@ class BlogController extends AbstractController
      */
     #[Route('/{id<\d+>}/edit', methods: ['GET', 'POST'], name: 'admin_post_edit')]
     #[IsGranted('edit', subject: 'post', message: 'Posts can only be edited by their authors.')]
-    public function edit(Request $request, Post $post, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, Ticket $post, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
@@ -147,7 +147,7 @@ class BlogController extends AbstractController
      */
     #[Route('/{id}/delete', methods: ['POST'], name: 'admin_post_delete')]
     #[IsGranted('delete', subject: 'post')]
-    public function delete(Request $request, Post $post, EntityManagerInterface $entityManager): Response
+    public function delete(Request $request, Ticket $post, EntityManagerInterface $entityManager): Response
     {
         if (!$this->isCsrfTokenValid('delete', $request->request->get('token'))) {
             return $this->redirectToRoute('admin_post_index');

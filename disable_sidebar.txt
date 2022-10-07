@@ -1,0 +1,9 @@
+    {# {{ show_source_code(_self) }} #}
+    {# {{ include('blog/_rss.html.twig') }} #}
+{# 
+    {{ render_esi(controller('Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController::templateAction', {
+        'template': 'blog/about.html.twig',
+        'sharedAge': 600,
+        '_locale': app.request.locale
+    })) }} 
+#}

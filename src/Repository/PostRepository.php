@@ -11,7 +11,7 @@
 
 namespace App\Repository;
 
-use App\Entity\Post;
+use App\Entity\Ticket;
 use App\Entity\Tag;
 use App\Pagination\Paginator;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -32,7 +32,7 @@ class PostRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Post::class);
+        parent::__construct($registry, Ticket::class);
     }
 
     public function findLatest(int $page = 1, Tag $tag = null): Paginator
@@ -55,7 +55,7 @@ class PostRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return Post[]
+     * @return Ticket[]
      */
     public function findBySearchQuery(string $query, int $limit = Paginator::PAGE_SIZE): array
     {

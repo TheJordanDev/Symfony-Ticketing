@@ -58,7 +58,7 @@
 
             <trans-unit id="title.homepage">
                 <source>title.homepage</source>
-                <target><![CDATA[Bienvenue sur l'application <strong>Symfony Demo</strong>]]></target>
+                <target><![CDATA[Bienvenue sur l'application <strong>Ticketing</strong>]]></target>
             </trans-unit>
             <trans-unit id="title.source_code">
                 <source>title.source_code</source>
@@ -78,7 +78,7 @@
             </trans-unit>
             <trans-unit id="title.post_list">
                 <source>title.post_list</source>
-                <target>Liste des articles</target>
+                <target>Liste des tickets</target>
             </trans-unit>
             <trans-unit id="title.edit_post">
                 <source>title.edit_post</source>
@@ -127,11 +127,11 @@
             </trans-unit>
             <trans-unit id="action.delete_post">
                 <source>action.delete_post</source>
-                <target>Supprimer l'article</target>
+                <target>Supprimer le ticket</target>
             </trans-unit>
             <trans-unit id="delete_post_modal.title">
                 <source>delete_post_modal.title</source>
-                <target>Êtes-vous sûr de vouloir supprimer ce post ?</target>
+                <target>Êtes-vous sûr de vouloir supprimer ce ticket ?</target>
             </trans-unit>
             <trans-unit id="delete_post_modal.body">
                 <source>delete_post_modal.body</source>
@@ -139,7 +139,7 @@
             </trans-unit>
             <trans-unit id="label.delete_post">
                 <source>label.delete_post</source>
-                <target>Supprimer l'article</target>
+                <target>Supprimer le ticket</target>
             </trans-unit>
             <trans-unit id="label.cancel">
                 <source>label.cancel</source>
@@ -147,11 +147,11 @@
             </trans-unit>
             <trans-unit id="label.create_post">
                 <source>label.create_post</source>
-                <target>Créer un article</target>
+                <target>Créer un ticket</target>
             </trans-unit>
             <trans-unit id="action.create_post">
                 <source>action.create_post</source>
-                <target>Créer un nouvel article</target>
+                <target>Créer un nouvel ticket</target>
             </trans-unit>
             <trans-unit id="label.save_and_create_new">
                 <source>label.save_and_create_new</source>
@@ -159,7 +159,7 @@
             </trans-unit>
             <trans-unit id="action.back_to_list">
                 <source>action.back_to_list</source>
-                <target>Retour à la liste des articles</target>
+                <target>Retour à la liste des tickets</target>
             </trans-unit>
             <trans-unit id="action.publish_comment">
                 <source>action.publish_comment</source>
@@ -273,7 +273,7 @@
             </trans-unit>
             <trans-unit id="menu.post_list">
                 <source>menu.post_list</source>
-                <target>Liste des articles</target>
+                <target>Liste des tickets</target>
             </trans-unit>
             <trans-unit id="menu.back_to_blog">
                 <source>menu.back_to_blog</source>
@@ -318,7 +318,7 @@
             </trans-unit>
             <trans-unit id="post.no_comments">
                 <source>post.no_comments</source>
-                <target>Soyez le premier à commenter cet article.</target>
+                <target>Soyez le premier à commenter ce ticket.</target>
             </trans-unit>
             <trans-unit id="post.no_posts_found">
                 <source>post.no_posts_found</source>
@@ -326,15 +326,15 @@
             </trans-unit>
             <trans-unit id="post.created_successfully">
                 <source>post.created_successfully</source>
-                <target>Article créé avec succès !</target>
+                <target>Ticket créé avec succès !</target>
             </trans-unit>
             <trans-unit id="post.updated_successfully">
                 <source>post.updated_successfully</source>
-                <target>Article mis à jour avec succès !</target>
+                <target>Ticket mis à jour avec succès !</target>
             </trans-unit>
             <trans-unit id="post.deleted_successfully">
                 <source>post.deleted_successfully</source>
-                <target>Article supprimé avec succès !</target>
+                <target>Ticket supprimé avec succès !</target>
             </trans-unit>
             <trans-unit id="post.search_for">
                 <source>post.search_for</source>
@@ -352,11 +352,11 @@
 
             <trans-unit id="notification.comment_created">
                 <source>notification.comment_created</source>
-                <target>Votre article a reçu un commentaire !</target>
+                <target>Votre ticket a reçu un commentaire !</target>
             </trans-unit>
             <trans-unit id="notification.comment_created.description">
                 <source>notification.comment_created.description</source>
-                <target><![CDATA[Votre article "{title}" a reçu un nouveau commentaire. Vous pouvez lire le commentaire en suivant <a href="{link}">ce lien</a>]]></target>
+                <target><![CDATA[Votre ticket "{title}" a reçu un nouveau commentaire. Vous pouvez lire le commentaire en suivant <a href="{link}">ce lien</a>]]></target>
             </trans-unit>
 
             <trans-unit id="help.app_description">

@@ -11,7 +11,7 @@
 
 namespace App\Form;
 
-use App\Entity\Post;
+use App\Entity\Ticket;
 use App\Form\Type\DateTimePickerType;
 use App\Form\Type\TagsInputType;
 use Symfony\Component\Form\AbstractType;
@@ -77,7 +77,7 @@ class PostType extends AbstractType
             // of the form handling process.
             // See https://symfony.com/doc/current/form/events.html
             ->addEventListener(FormEvents::SUBMIT, function (FormEvent $event) {
-                /** @var Post */
+                /** @var Ticket */
                 $post = $event->getData();
                 if (null === $post->getSlug() && null !== $post->getTitle()) {
                     $post->setSlug($this->slugger->slug($post->getTitle())->lower());
@@ -92,7 +92,7 @@ class PostType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Post::class,
+            'data_class' => Ticket::class,
         ]);
     }
 }

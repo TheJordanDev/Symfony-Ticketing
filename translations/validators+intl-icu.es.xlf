@@ -18,8 +18,8 @@
                 <source>post.too_short_content</source>
                 <target>El contenido del artículo es demasiado corto ({ limit } caracteres como mínimo)</target>
             </trans-unit>
-            <trans-unit id="post.too_many_tags">
-                <source>post.too_many_tags</source>
+            <trans-unit id="ticket.too_many_tags">
+                <source>ticket.too_many_tags</source>
                 <target>Demasiadas etiquetas (añade { limit } como máximo)</target>
             </trans-unit>
             <trans-unit id="comment.blank">

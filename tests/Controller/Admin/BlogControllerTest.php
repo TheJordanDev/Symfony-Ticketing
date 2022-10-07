@@ -95,7 +95,7 @@ class BlogControllerTest extends WebTestCase
 
         $this->assertResponseRedirects('/en/admin/post/', Response::HTTP_FOUND);
 
-        /** @var \App\Entity\Post $post */
+        /** @var \App\Entity\Ticket $post */
         $post = static::getContainer()->get(PostRepository::class)->findOneByTitle($postTitle);
         $this->assertNotNull($post);
         $this->assertSame($postSummary, $post->getSummary());
@@ -159,7 +159,7 @@ class BlogControllerTest extends WebTestCase
 
         $this->assertResponseRedirects('/en/admin/post/1/edit', Response::HTTP_FOUND);
 
-        /** @var \App\Entity\Post $post */
+        /** @var \App\Entity\Ticket $post */
         $post = static::getContainer()->get(PostRepository::class)->find(1);
         $this->assertSame($newBlogPostTitle, $post->getTitle());
     }

@@ -12,7 +12,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Comment;
-use App\Entity\Post;
+use App\Entity\Ticket;
 use App\Entity\Tag;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -69,7 +69,7 @@ class AppFixtures extends Fixture
     private function loadPosts(ObjectManager $manager): void
     {
         foreach ($this->getPostData() as [$title, $slug, $summary, $content, $publishedAt, $author, $tags]) {
-            $post = new Post();
+            $post = new Ticket();
             $post->setTitle($title);
             $post->setSlug($slug);
             $post->setSummary($summary);
@@ -97,6 +97,7 @@ class AppFixtures extends Fixture
     {
         return [
             // $userData = [$fullname, $username, $password, $email, $roles];
+            ['Jordan C', 'thejordan_dev', 'Jojodu69', "jordancoulon2003@gmail.com",['ROLE_ADMIN']],
             ['Jane Doe', 'jane_admin', 'kitten', 'jane_admin@symfony.com', ['ROLE_ADMIN']],
             ['Tom Doe', 'tom_admin', 'kitten', 'tom_admin@symfony.com', ['ROLE_ADMIN']],
             ['John Doe', 'john_user', 'kitten', 'john_user@symfony.com', ['ROLE_USER']],
@@ -106,22 +107,16 @@ class AppFixtures extends Fixture
     private function getTagData(): array
     {
         return [
-            'lorem',
-            'ipsum',
-            'consectetur',
-            'adipiscing',
-            'incididunt',
-            'labore',
-            'voluptate',
-            'dolore',
-            'pariatur',
+            'OUVERT',
+            'EN COURS',
+            'FERMÉ',
         ];
     }
 
     private function getPostData(): array
     {
         $posts = [];
-        foreach ($this->getPhrases() as $i => $title) {
+        foreach ($this->getTitles() as $i => $title) {
             // $postData = [$title, $slug, $summary, $content, $publishedAt, $author, $tags, $comments];
             $posts[] = [
                 $title,
@@ -130,12 +125,21 @@ class AppFixtures extends Fixture
                 $this->getPostContent(),
                 new \DateTime('now - '.$i.'days'),
                 // Ensure that the first post is written by Jane Doe to simplify tests
-                $this->getReference(['jane_admin', 'tom_admin'][0 === $i ? 0 : random_int(0, 1)]),
+                $this->getReference(['thejordan_dev', 'tom_admin'][0 === $i ? 0 : random_int(0, 1)]),
                 $this->getRandomTags(),
             ];
         }
 
         return $posts;
+    }
+
+    private function getTitles(): array {
+        return [
+            'Les visiteurs ne peuvent plus faire de comptes.',
+            'La page d\'accueil ne veut pas charger.',
+            'Le site ne marche plus (Erreur 500)',
+            'Un utilisateur a réussis accéder au panel admin.',
+        ];
     }
 
     private function getPhrases(): array
@@ -231,7 +235,7 @@ class AppFixtures extends Fixture
     {
         $tagNames = $this->getTagData();
         shuffle($tagNames);
-        $selectedTags = \array_slice($tagNames, 0, random_int(2, 4));
+    $selectedTags = \array_slice($tagNames, 0, 1/*random_int(2, 4)*/);
 
         return array_map(function ($tagName) { return $this->getReference('tag-'.$tagName); }, $selectedTags);
     }

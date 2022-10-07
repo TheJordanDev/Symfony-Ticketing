@@ -14,8 +14,8 @@
                 <source>post.too_short_content</source>
                 <target>Yayın içeriği çok kısa ({ limit } minimum karakter)</target>
             </trans-unit>
-            <trans-unit id="post.too_many_tags">
-                <source>post.too_many_tags</source>
+            <trans-unit id="ticket.too_many_tags">
+                <source>ticket.too_many_tags</source>
                 <target>Çok fazla etiket var ({ limit } etiketini veya daha azını ekleyin)</target>
             </trans-unit>
             <trans-unit id="comment.blank">

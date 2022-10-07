@@ -11,7 +11,7 @@
 
 namespace App\Tests\Controller;
 
-use App\Entity\Post;
+use App\Entity\Ticket;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -53,7 +53,7 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
         // the service container is always available via the test client
-        $blogPost = $client->getContainer()->get('doctrine')->getRepository(Post::class)->find(1);
+        $blogPost = $client->getContainer()->get('doctrine')->getRepository(Ticket::class)->find(1);
         $client->request('GET', sprintf('/en/blog/posts/%s', $blogPost->getSlug()));
 
         $this->assertResponseIsSuccessful();
